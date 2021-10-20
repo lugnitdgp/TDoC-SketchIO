@@ -8,7 +8,7 @@ module.exports = (io) => {
             io.emit('user-name', name)
         })
 
-        socket.on('disconenct', () => {
+        socket.on('disconnect', () => {
             console.log('Client disconnected :(');
         })
     }
