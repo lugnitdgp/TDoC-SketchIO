@@ -1,4 +1,4 @@
-import socket from "./service/socket"
+import socket from "./service/sockets"
 import { useEffect, useState } from "react"
 
 const App = () => {
