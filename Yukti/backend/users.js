@@ -1,5 +1,9 @@
-users = [];
+const users = [];
 
-function addUser(name /*and other things*/) {
-  users.push({ name /*other data pertaining to user*/ });
-}
+const addUser = (user) => {
+  users.push(user);
+};
+
+module.exports = {
+  addUser,
+};

@@ -1,7 +1,9 @@
 const { createServer } = require("http"); // createServer is the funtion used to create a HTTP server instance
 const app = require("express"); // requestListener
 const server = createServer(app); // HTTP server instance
-const io = require("socket.io")(server); // socket.io server object
+const io = require("socket.io")(server, {
+  cors: "*",
+}); // socket.io server object
 const PORT = 8000;
 
 const eventHandlers = require("./eventHandlers")(io);
