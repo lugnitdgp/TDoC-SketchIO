@@ -1,0 +1,72 @@
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 10;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.joinOuterContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  background-color: #96d6c3;
+}
+
+.joinInnerContainer {
+  width: 20%;
+}
+
+.joinInput {
+  border-radius: 10;
+  padding: 20px 20px;
+  width: 100%;
+}
+
+.heading {
+  color: rgb(12, 11, 11);
+  font-size: 3em;
+  padding-bottom: 20px;
+  border-bottom: 2px solid white;
+}
+
+.button {
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: large;
+  text-decoration: solid;
+  background: #048860;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: #048860;
+  width: 100%;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .joinOuterContainer {
+    height: 100%;
+  }
+
+  .joinInnerContainer {
+    width: 100%;
+  }
+}
+
+button:focus {
+  outline: 0;
+}
