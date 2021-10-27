@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import React from "react";
 import io from "socket.io-client";
+import './App.css';
+import DrawArea from './components/DrawArea';
 
 const socket = io.connect('/');
 
@@ -36,8 +38,23 @@ function App() {
           <Route path="/chat/:roomname/:username" component={Appmain} />
         </Switch>
       </div>
+      <DrawArea/>
     </Router>
+    
   );
 }
 
 export default App;
+
+// import logo from './logo.svg';
+// import './App.css';
+// import DrawArea from './components/DrawArea';
+
+
+// function App(){
+//   return (
+//     <DrawArea/>
+//   );
+// }
+
+// export default App;
