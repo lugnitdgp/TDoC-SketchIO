@@ -42,5 +42,8 @@
   },
   "devDependencies": {
     "@types/query-string": "^6.3.0"
-  }
+  },
+
+  "proxy":"http://localhost:5000"
+  
 }
