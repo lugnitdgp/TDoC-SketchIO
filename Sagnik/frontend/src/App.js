@@ -1,37 +1,20 @@
-import socket from "./service/sockets"
-import { useEffect, useState } from "react"
+import Chat from './Components/Chat/Chat';
+import Join from './Components/Join/Join';
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const App = () => {
-  const [name, setName] = useState('')
-  const [users, setUsers] = useState([])
-  useEffect( () => {
-    socket.on('connect', () => {
-     console.log('Connected !!');
-    })
-    socket.on('user-name', (name) => {
-      setUsers(_user => [..._user, name])
-    })
-    socket.on('disconnect', () => {
-      console.log('Disconnected !!');
-     })
-  }, [])
-  const sendName = () => {
-    socket.emit('user-name', name)
-  }
+
   return (
     <>
-    <h1> Sketch.io </h1>
-    <p>{name}</p>
-    <input
-      placeholder = "Enter yor name"
-      onChange = {(event) => {setName(event.target.value)}}
-      onKeyPress = {(event) => event.key === "Enter" ? sendName() : null}
-    />
-    {
-      users.map((user, j) => <p key = {j}> user </p>)
-    }
+      <Router>
+        <Route path="/" exact component={Join} />
+        <Route path="/chat" component={Chat} />
+      </Router>
     </>
   );
 }
+
+
 
 export default App;
