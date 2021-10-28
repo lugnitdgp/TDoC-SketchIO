@@ -49,6 +49,11 @@ io.on('connection', (socket) => {
 		callback();
 	});
 
+	socket.on('canvas-data', (data) => {
+		socket.broadcast.emit('canvas-data', data);
+		console.log("draw connected");
+	})
+
 	socket.on('disconnect', () => {
 		console.log('disconnected');
 		const user = removeUser(socket.id);

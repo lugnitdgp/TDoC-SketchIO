@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
-import io from 'socket.io-client';
+import socket from '../../service/sockets';
 
 import TextContainer from '../Container/Container';
 import Messages from '../Messages/Messages';
 import Input from '../Input/Input';
 import './Chat.css';
 
-let socket;
+
 
 const Chat = ({ location, history }) => {
 	const [name, setName] = useState('');
@@ -15,12 +15,11 @@ const Chat = ({ location, history }) => {
 	const [users, setUsers] = useState('');
 	const [message, setMessage] = useState('');
 	const [messages, setMessages] = useState([]);
-	const ENDPOINT = 'http://localhost:8000/';
-
+	
 	useEffect(() => {
 		const { name, room } = queryString.parse(location.search);
 
-		socket = io(ENDPOINT);
+		
 
 		setRoom(room);
 		setName(name);
@@ -31,7 +30,7 @@ const Chat = ({ location, history }) => {
 				history.push('/');
 			}
 		});
-	}, [ENDPOINT, location.search]); 
+	}, [location.search]); 
 
 	useEffect(() => {
 		socket.on('message', (message) => {
