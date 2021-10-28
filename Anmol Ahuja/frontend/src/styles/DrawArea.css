@@ -1,0 +1,30 @@
+.DrawArea{
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-color: rgb(230, 209, 182);
+}
+
+.ColorSelector{
+    text-align:center;
+    margin:10px;
+}
+
+.BoardContainer{
+    width:60%;
+    height:60%;
+    margin:auto;
+    margin-top:10%;
+    background-color:rgb(256, 250, 245);
+}
+
+.tools {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.SizeSelector{
+    text-align:center;
+    display:inline;
+}
