@@ -35,22 +35,22 @@ drawOncanvas(){
         ctx.lineCap = 'round';
         ctx.strokeStyle = 'black';
 
-        canvas.addEventListener('mousedown', function(e){
-            canvas.addEventListener('mousemove',onPaint, false)
-        },false);
+    }, false)
+    canvas.addEventListener('mousedown', function(e){
+        canvas.addEventListener('mousemove',onPaint, false)
+    },false);
 
-        canvas.addEventListener('mouseup', function(){
-            canvas.removeEventListener('mousemove',onPaint, false)
-        },false);
+    canvas.addEventListener('mouseup', function(){
+        canvas.removeEventListener('mousemove',onPaint, false)
+    },false);
 
-        var onPaint = function(){
-            ctx.beginPath();
-            ctx.moveTo(last_mouse.x, last_mouse.y);
-            ctx.lineTo(mouse.x,mouse.y);
-            ctx.closePath();
-            ctx.stroke();
-        }
-    })
+    var onPaint = function(){
+        ctx.beginPath();
+        ctx.moveTo(last_mouse.x, last_mouse.y);
+        ctx.lineTo(mouse.x,mouse.y);
+        ctx.closePath();
+        ctx.stroke();
+    }
 }
 
 
