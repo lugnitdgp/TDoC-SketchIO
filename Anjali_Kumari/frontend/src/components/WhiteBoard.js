@@ -3,7 +3,6 @@ import '../styles/WhiteBoard.css';
 import io from 'socket.io-client';
 
 
-
 class WhiteBoard extends React.Component {
     timeout;
     socket = io.connect("http://localhost:5000/");
@@ -45,8 +44,7 @@ class WhiteBoard extends React.Component {
 
         var mouse = {x:0,y:0};
         var last_mouse = {x:0,y:0};
-
-        // Mouse Capturing Work
+// Mouse Capturing 
         canvas.addEventListener('mousemove', function(e){
             last_mouse.x = mouse.x;
             last_mouse.y = mouse.y;
@@ -55,7 +53,7 @@ class WhiteBoard extends React.Component {
         }, false);
         
 
-        // Drawing Part
+        // Drawing 
         ctx.lineWidth = this.props.size;
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
@@ -69,8 +67,7 @@ class WhiteBoard extends React.Component {
             canvas.removeEventListener('mousemove',onPaint, false)
         }, false);
 
-        var root = this;  //variable define
-
+        var root = this;  
         var onPaint = function(){
             ctx.beginPath();
             ctx.moveTo(last_mouse.x, last_mouse.y);
@@ -88,9 +85,9 @@ class WhiteBoard extends React.Component {
     render() {
         return (
             <div className="sketch" id="sketch">
-                <canvas className="Board" id="Board">
+                <canvas className="Board" id="Board"/>
 
-                </canvas>
+               
             </div>
         )
     }
