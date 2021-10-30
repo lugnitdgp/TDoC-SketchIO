@@ -1,0 +1,16 @@
+.draw_box
+{
+  height:99vh;
+  display: flex;
+  flex-direction: column;
+  width:55vw;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  margin-right: auto;
+  background-color:#65749448;
+  border-radius:15px;
+  vertical-align: center;
+  margin: auto; 
+
+} 
